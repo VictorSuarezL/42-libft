@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_listnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsanz-su <vsanz-su@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -14,14 +14,14 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list	*n_list;
+	t_list	*n_lst;
 
-	n_list = (t_list *)malloc(sizeof(t_list));
-	if (!n_list)
+	n_lst = (t_list *)malloc(sizeof(t_list));
+	if (!n_lst)
 	{
 		return (NULL);
 	}
-	n_list->content = content;
-	n_list->next = NULL;
-	return (n_list);
+	n_lst->content = content;
+	n_lst->next = NULL;
+	return (n_lst);
 }

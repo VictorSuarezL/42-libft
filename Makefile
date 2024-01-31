@@ -6,9 +6,9 @@ SRC_DIR		= src
 
 # Directorio de destino de los archivos objeto (.o)
 OBJ_DIR		= obj
-INCLUDE = ./includes
+INCLUDE = ./
 
-# Lista de archivos fuente
+# lsta de archivos fuente
 SRC_FILES		= $(SRC_DIR)/ft_isalpha.c \
 			$(SRC_DIR)/ft_isdigit.c \
 			$(SRC_DIR)/ft_isalnum.c \
@@ -42,7 +42,8 @@ SRC_FILES		= $(SRC_DIR)/ft_isalpha.c \
 			$(SRC_DIR)/ft_putchar_fd.c \
 			$(SRC_DIR)/ft_putstr_fd.c \
 			$(SRC_DIR)/ft_putendl_fd.c \
-			$(SRC_DIR)/ft_putnbr_fd.c
+			$(SRC_DIR)/ft_putnbr_fd.c \
+			$(SRC_DIR)/get_next_line.c
 
 SRC_BONUS_FILES	= $(SRC_DIR)/ft_lstnew_bonus.c \
 			$(SRC_DIR)/ft_lstadd_front_bonus.c \
@@ -54,10 +55,9 @@ SRC_BONUS_FILES	= $(SRC_DIR)/ft_lstnew_bonus.c \
 			$(SRC_DIR)/ft_lstiter_bonus.c \
 			$(SRC_DIR)/ft_lstmap_bonus.c
 
-# Genera la lista de archivos objeto a partir de la lista de archivos fuente
+# Genera la lsta de archivos objeto a partir de la lsta de archivos fuente
 OBJ		= $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC_FILES))
 BONUS_OBJ = $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC_BONUS_FILES))
-# OBJ = $(patsubst %.c, $(OBJ_DIR)/%.o, $(SRC_FILES))
 # DEP = $(addsuffix .d, $(basename $(SRC_FILES)))
 
 # Comandos y variables adicionales
@@ -88,4 +88,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean bonus re

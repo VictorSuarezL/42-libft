@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_listmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsanz-su <vsanz-su@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -14,11 +14,11 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*new_list;
+	t_list	*new_lst;
 	t_list	*new_node;
 	void	*tmp;
 
-	new_list = 0;
+	new_lst = 0;
 	while (lst)
 	{
 		tmp = f(lst->content);
@@ -26,11 +26,11 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		if (!new_node)
 		{
 			del(tmp);
-			ft_lstclear(&new_list, del);
+			ft_lstclear(&new_lst, del);
 			return (0);
 		}
-		ft_lstadd_back(&new_list, new_node);
+		ft_lstadd_back(&new_lst, new_node);
 		lst = lst->next;
 	}
-	return (new_list);
+	return (new_lst);
 }
