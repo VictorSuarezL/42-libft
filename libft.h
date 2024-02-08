@@ -4,7 +4,6 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include <unistd.h>
-# include <stdlib.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 10
@@ -51,7 +50,7 @@ char	*get_next_line(int fd);
 
 /* BONUS PART */
 typedef struct s_list
-{
+{ 
 	void			*content;
 	struct s_list	*next;
 }					t_list;

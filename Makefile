@@ -64,28 +64,42 @@ BONUS_OBJ = $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC_BONUS_FILES))
 CC			= gcc -Wall -Wextra -Werror -MMD -I$(INCLUDE)
 RM			= rm -f
 
+# Colours
+BLACK				=	\033[0;30m
+RED					=	\033[0;31m
+GREEN				=	\033[0;32m
+YELLOW				=	\033[0;33m
+BLUE				=	\033[0;34m
+PURPLE				=	\033[0;35m
+CYAN				=	\033[0;36m
+WHITE				=	\033[0;37m
+RESET				=	\033[0m
+
 # Regla para compilar un archivo fuente en un archivo objeto en el directorio OBJ_DIR
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(OBJ_DIR)
-	$(CC) -c $< -o $@
+	@$(CC) -c $< -o $@
 
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rcs $(NAME) $^
-	ranlib $(NAME)
+	@ar rcs $(NAME) $^
+	@ranlib $(NAME)
+	@printf "$(BLUE)==> $(CYAN)Libft compiled\n$(RESET)"
 
 bonus: $(NAME) $(BONUS_OBJ)
-	ar rcs $^
+	@ar rcs $^
+	@printf "$(BLUE)==> $(CYAN)Libft bonus compiled\n$(RESET)"
 
 clean:
-	$(RM) $(OBJ) $(BONUS_OBJ)
-	$(RM) -r ./$(OBJ_DIR)
+	@$(RM) $(OBJ) $(BONUS_OBJ)
+	@$(RM) -r ./$(OBJ_DIR)
+	@printf "$(BLUE)==> $(RED)Removed Libft\n$(RESET)"
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean bonus re
+.PHONY: all clean fclean re bonus
