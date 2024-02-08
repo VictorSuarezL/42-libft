@@ -46,6 +46,8 @@ SRC_FILES		= $(SRC_DIR)/ft_isalpha.c \
 			$(SRC_DIR)/get_next_line.c \
 			$(SRC_DIR)/ft_printf_utils.c \
 			$(SRC_DIR)/ft_printf.c \
+			$(SRC_DIR)/ft_error.c \
+			$(SRC_DIR)/ft_atod.c \
 
 
 SRC_BONUS_FILES	= $(SRC_DIR)/ft_lstnew_bonus.c \
