@@ -9,6 +9,16 @@
 #  define BUFFER_SIZE 10
 # endif
 
+// PRINTF UTILS:
+# include <stdarg.h>
+
+// size_t	ft_strlen(const char *s);
+void	ft_putchar(char c, int *n_chr);
+void	ft_putstr(char *s, int *n_chr);
+void	ft_put_nbr_base(char *str, long long int nbr, int *n_chr);
+// void	ft_format(va_list args, const char format, int *n_chr);
+// int		ft_printf(char const *, ...);
+
 int					ft_isalpha(int i);
 int					ft_isdigit(int i);
 int					ft_isalnum(int i);
